@@ -1,23 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+import { Root } from 'native-base';
+import Today from './screens/Today';
+import AddTask from './screens/AddTask';
+import Calendar from './screens/Calendar';
+import { tabNavigatorConfig, stackNavigatorConfig } from './../config/routes';
 
 export default class App extends React.Component {
     render() {
+        const TabNavigator = createBottomTabNavigator({
+            Today,
+            AddTask,
+            Calendar
+        }, tabNavigatorConfig);
+
+        const StackNavigator = createStackNavigator({
+            Home: TabNavigator
+        });
+
         return (
-            <View style={styles.container}>
-                <Text>Open up App.js to start working on your app!</Text>
-                <Text>Changes you make will automatically reload.</Text>
-                <Text>Shake your phone to open the developer menu.</Text>
-            </View>
+            <Root>
+                <StackNavigator />
+            </Root>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
