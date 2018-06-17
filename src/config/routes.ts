@@ -7,5 +7,5 @@ export const tabNavigatorConfig = {
 };
 
 export const stackNavigatorConfig = {
-
+    
 };

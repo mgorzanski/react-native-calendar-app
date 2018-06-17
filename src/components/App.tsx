@@ -14,6 +14,10 @@ export default class App extends React.Component {
             Calendar
         }, tabNavigatorConfig);
 
+        TabNavigator.navigationOptions = {
+            title: 'Calendar'
+        };
+
         const StackNavigator = createStackNavigator({
             Home: TabNavigator
         });
