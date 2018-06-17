@@ -21,3 +21,6 @@ yarn-error.log*
 /android/build
 /android/.gradle
 /android/app/build
+
+# Jest
+.jest/
