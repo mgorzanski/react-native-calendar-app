@@ -13,7 +13,7 @@ export default class Today extends React.Component {
             <Container>
                 <Content>
                     <CalendarHeader title="Morning" />
-                    <CalendarItem />
+                    <CalendarItem time="6.00" />
                     <CalendarHeader title="Lunch" />
                     <CalendarHeader title="Afternoon" />
                 </Content>

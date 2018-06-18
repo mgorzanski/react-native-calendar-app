@@ -3,9 +3,10 @@ import { View, StyleSheet } from 'react-native';
 import { Text } from 'native-base';
 import * as colors from './../../styles/colors';
 import { material } from 'react-native-typography';
+import CalendarItemTime from './CalendarItemTime';
 
 interface CalendarItemProps {
-
+    time: string;
 };
 
 const styles = StyleSheet.create({
@@ -24,14 +25,7 @@ const styles = StyleSheet.create({
     }
 });
 
-const time = StyleSheet.flatten([
-    material.button,
-    {
-        textAlign: 'center',
-        fontSize: 20,
-        padding: 13
-    }
-]);
+
 
 const task = StyleSheet.flatten([
     material.button,
@@ -45,10 +39,10 @@ export default function CalendarItem(props: CalendarItemProps) {
     return (
         <View style={styles.container}>
             <View style={styles.timeView}>
-                <Text style={time}>6.00</Text>
+                <CalendarItemTime time={props.time} />
             </View>
             <View style={styles.tasksView}>
-                <Text style={task}>Breakfast</Text>
+                <Text style={task}>{props.tasks}</Text>
             </View>
         </View>
     );
