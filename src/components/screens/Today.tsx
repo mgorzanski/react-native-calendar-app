@@ -19,6 +19,9 @@ export default class Today extends React.Component {
                     </CalendarItem>
                     <CalendarHeader title="Lunch" />
                     <CalendarHeader title="Afternoon" />
+                    <CalendarItem time="1.00">
+                        <CalendarItemTask name="Deep work" completed={false} />
+                    </CalendarItem>
                 </Content>
             </Container>
         );
