@@ -2,6 +2,7 @@ import React from 'react';
 import { human, materialColors } from 'react-native-typography';
 import { View, StyleSheet } from 'react-native';
 import { Text } from 'native-base';
+import * as colors from './../../styles/colors';
 
 interface CalendarHeaderProps {
     title: string;
@@ -10,14 +11,14 @@ interface CalendarHeaderProps {
 const styles = StyleSheet.create({
     view: {
         padding: 4,
-        backgroundColor: '#c4c4c4',
+        backgroundColor: colors.calendarHeaderBackground
     }
 });
 
 const titleStyles = StyleSheet.flatten([
     human.headline,
     {
-        color: materialColors.blackPrimary
+        color: '#000'
     }
 ]);
 

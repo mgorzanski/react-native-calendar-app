@@ -1,8 +1,9 @@
 import CalendarHeader from './CalendarHeader';
+import CalendarItem from './CalendarItem';
 
 export {
-    CalendarHeader
+    CalendarHeader,
+    CalendarItem
 }
-// export * from './CalendarItem';
 // export * from './CalendarItemTime';
 // export * from './CalendarItemTasks';

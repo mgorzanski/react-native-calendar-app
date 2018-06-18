@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, Content, Container } from 'native-base';
-import { CalendarHeader } from './../Calendar';
+import { CalendarHeader, CalendarItem } from './../Calendar';
 
 export default class Today extends React.Component {
     static navigationOptions = () => ({
@@ -13,6 +13,7 @@ export default class Today extends React.Component {
             <Container>
                 <Content>
                     <CalendarHeader title="Morning" />
+                    <CalendarItem />
                     <CalendarHeader title="Lunch" />
                     <CalendarHeader title="Afternoon" />
                 </Content>
