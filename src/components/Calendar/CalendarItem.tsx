@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Text } from 'native-base';
 import * as colors from './../../styles/colors';
@@ -7,6 +7,7 @@ import CalendarItemTime from './CalendarItemTime';
 
 interface CalendarItemProps {
     time: string;
+    children?: ReactNode;
 };
 
 const styles = StyleSheet.create({
@@ -25,16 +26,6 @@ const styles = StyleSheet.create({
     }
 });
 
-
-
-const task = StyleSheet.flatten([
-    material.button,
-    {
-        fontSize: 20,
-        padding: 13
-    }
-]);
-
 export default function CalendarItem(props: CalendarItemProps) {
     return (
         <View style={styles.container}>
@@ -42,7 +33,7 @@ export default function CalendarItem(props: CalendarItemProps) {
                 <CalendarItemTime time={props.time} />
             </View>
             <View style={styles.tasksView}>
-                <Text style={task}>{props.tasks}</Text>
+                {props.children}
             </View>
         </View>
     );

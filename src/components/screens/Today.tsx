@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, Content, Container } from 'native-base';
-import { CalendarHeader, CalendarItem } from './../Calendar';
+import { CalendarHeader, CalendarItem, CalendarItemTask } from './../Calendar';
 
 export default class Today extends React.Component {
     static navigationOptions = () => ({
@@ -13,7 +13,10 @@ export default class Today extends React.Component {
             <Container>
                 <Content>
                     <CalendarHeader title="Morning" />
-                    <CalendarItem time="6.00" />
+                    <CalendarItem time="6.00">
+                        <CalendarItemTask name="Breakfast" completed={false} />
+                        <CalendarItemTask name="Some streches" completed={false} />
+                    </CalendarItem>
                     <CalendarHeader title="Lunch" />
                     <CalendarHeader title="Afternoon" />
                 </Content>
