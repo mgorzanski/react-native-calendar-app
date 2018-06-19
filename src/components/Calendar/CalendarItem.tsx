@@ -12,17 +12,20 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'row',
+        borderBottomColor: colors.calendarItemBorder,
+        borderBottomWidth: 1
     },
     timeView: {
         flex: 1,
         borderRightColor: colors.calendarItemBorder,
-        borderRightWidth: 1
+        borderRightWidth: 1,
+        justifyContent: 'center'
     },
     tasksView: {
         flex: 4,
         display: 'flex',
         flexDirection: 'row',
-        margin: 6
+        flexWrap: 'wrap'
     },
     oneTaskView: {
         flex: 4,

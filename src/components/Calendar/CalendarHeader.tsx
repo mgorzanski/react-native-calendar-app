@@ -6,29 +6,48 @@ import * as colors from './../../styles/colors';
 
 interface CalendarHeaderProps {
     title: string;
+    doNotDisplayTopBorder?: boolean;
 };
 
 const styles = StyleSheet.create({
     view: {
         padding: 4,
-        backgroundColor: colors.calendarHeaderBackground
+        borderBottomWidth: 4,
+        borderBottomColor: '#000',
+        borderTopWidth: 4,
+        borderTopColor: '#000'
+    },
+    viewNoTopBorder: {
+        padding: 4,
+        borderBottomWidth: 4,
+        borderBottomColor: '#000'
     }
 });
 
 const titleStyles = StyleSheet.flatten([
     human.headline,
     {
-        color: '#000'
+        color: '#000',
+        fontWeight: 'bold',
+        fontSize: 20
     }
 ]);
 
 export default function CalendarHeader(props: CalendarHeaderProps) {
-    let { title } = props;
+    let { title, doNotDisplayTopBorder } = props;
     title = title.toUpperCase();
 
-    return (
-        <View style={styles.view}>
-            <Text style={titleStyles}>{title}</Text>
-        </View>
-    );
+    if (doNotDisplayTopBorder) {
+        return (
+            <View style={styles.viewNoTopBorder}>
+                <Text style={titleStyles}>{title}</Text>
+            </View>
+        );
+    } else {
+        return (
+            <View style={styles.view}>
+                <Text style={titleStyles}>{title}</Text>
+            </View>
+        );
+    }
 }

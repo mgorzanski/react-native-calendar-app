@@ -7,5 +7,3 @@ export {
     CalendarItem,
     CalendarItemTask
 }
-// export * from './CalendarItemTime';
-// export * from './CalendarItemTasks';

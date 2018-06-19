@@ -7,12 +7,18 @@ import * as colors from './../../styles/colors';
 interface CalendarItemTasksProps {
     name: string;
     completed: boolean;
+    multiple?: boolean;
 };
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.calendarItemTaskBackground,
+        backgroundColor: '#936644',
         marginRight: 6
+    },
+    containerMultiple: {
+        backgroundColor: '#936644',
+        margin: 8,
+        width: '45%'
     }
 });
 
@@ -25,9 +31,19 @@ const task = StyleSheet.flatten([
 ]);
 
 export default function CalendarItemTask(props: CalendarItemTasksProps) {
-    return (
-        <View style={styles.container}>
-            <Text style={task}>{props.name}</Text>
-        </View>
-    );
+    const multiple = props.multiple;
+
+    if (multiple) {
+        return (
+            <View style={styles.containerMultiple}>
+                <Text style={task}>{props.name}</Text>
+            </View>
+        );
+    } else {
+        return (
+            <View style={styles.container}>
+                <Text style={task}>{props.name}</Text>
+            </View>
+        );
+    }
 }
