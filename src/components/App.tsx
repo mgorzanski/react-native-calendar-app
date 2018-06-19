@@ -5,8 +5,15 @@ import Today from './screens/Today';
 import AddTask from './screens/AddTask';
 import Calendar from './screens/Calendar';
 import { tabNavigatorConfig, stackNavigatorConfig } from './../config/routes';
+import PopupMenu from './PopupMenu';
 
 export default class App extends React.Component {
+    onPopupEvent(eventName, index) {
+        if (eventName !== 'itemSelected') return;
+        // if (index === 0)
+        // else
+    }
+
     render() {
         const TabNavigator = createBottomTabNavigator({
             Today,
@@ -15,7 +22,8 @@ export default class App extends React.Component {
         }, tabNavigatorConfig);
 
         TabNavigator.navigationOptions = {
-            title: 'Calendar'
+            title: 'Calendar',
+            headerRight: (<PopupMenu actions={['Settings']} onPress={() => this.onPopupEvent} />),
         };
 
         const StackNavigator = createStackNavigator({
