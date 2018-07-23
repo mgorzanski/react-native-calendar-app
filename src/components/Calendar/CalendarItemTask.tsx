@@ -12,8 +12,7 @@ interface CalendarItemTasksProps {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#936644',
-        marginRight: 6
+        backgroundColor: '#936644'
     },
     containerMultiple: {
         backgroundColor: '#936644',
